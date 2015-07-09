@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-ng-app="scApp">
+<head lang="en">
+    <meta charset="utf-8" />
+    <title>Root</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./node_modules/toastr/build/toastr.min.css" />
+    <link rel="stylesheet" href="./dist/sc.min.css">
+    <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-bootstrap/dist/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-bootstrap/dist/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>
+    <script src="./dist/sc.js"></script>
+</head>
+<body>
+    <nav class="navbar" ng-controller="mainMenuCtrl">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Root</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href ui-sref="test1">Link 1</a></li>
+                    <li class="dropdown" dropdown on-toggle="toggled(open)">
+                        <a href class="dropdown-toggle" dropdown-toggle>
+                            Sub menu <span class="caret"></span>
+                            
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="item in menuItems">
+                                <a href="#" ui-sref="{{item.uisref}}">{{item.label}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+    <div class="container">
+        CSS test
+        <h1 class="test1">test1</h1>
+        <h1 class="test2">test2</h1>
+    </div>
+    <script type="text/javascript" src="./node_modules/toastr/build/toastr.min.js"></script>
+    <script src="//localhost:35729/livereload.js"></script>
+</body>
+</html>
