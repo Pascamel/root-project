@@ -1,18 +1,17 @@
 module.exports = {
-  dist: {
-    src: [
-      'src/libs/*.js',
-      'src/**/*.js',
-      'src/global.js'
-    ],
-    dest: 'dist/sc.js'
-  },
-  styles: {
-  	src: [
-      'src/libs/*.css',
-      'src/**/*.css',
-      'src/global.css'
-  	],
-  	dest: 'dist/sc.css'	
-  }
+    dist: {
+        src: [
+            'src/common.js',
+            'src/core/**/*.js',
+            'src/**/*.js'
+        ],
+        dest: 'dist/sc.js'
+    },
+    styles: {
+        src: [
+            'src/common.css',
+            'src/**/*.css'
+        ],
+        dest: 'dist/sc.css'
+    }
 }

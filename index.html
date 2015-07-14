@@ -12,10 +12,12 @@
     <script type="text/javascript" src="./node_modules/angular-bootstrap/dist/ui-bootstrap.min.js"></script>
     <script type="text/javascript" src="./node_modules/angular-bootstrap/dist/ui-bootstrap-tpls.min.js"></script>
     <script type="text/javascript" src="./node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="./node_modules/ng-facebook/ngFacebook.js"></script>
+
     <script src="./dist/sc.js"></script>
 </head>
 <body>
-    <nav class="navbar" ng-controller="mainMenuCtrl">
+    <nav class="navbar" ng-controller="MainMenuCtrl">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -32,7 +34,6 @@
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href class="dropdown-toggle" dropdown-toggle>
                             Sub menu <span class="caret"></span>
-                            
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="item in menuItems">
@@ -40,18 +41,24 @@
                             </li>
                         </ul>
                     </li>
+                    <li><a>test={{AuthService.isAuthenticated()}}</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="container">
         <div ui-view></div>
     </div>
+
     <div class="container">
         CSS test
         <h1 class="test1">test1</h1>
         <h1 class="test2">test2</h1>
     </div>
+
+    <div id="fb-root"></div>
+
     <script type="text/javascript" src="./node_modules/toastr/build/toastr.min.js"></script>
     <script src="//localhost:35729/livereload.js"></script>
 </body>
